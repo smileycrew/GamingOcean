@@ -40,7 +40,7 @@ export const loginUser = async (userData: UserEssentials) => {
   }
 }
 
-export const registerUser = async (userData: User) => {
+export const registerUser = async (userData: User | UserEssentials) => {
   userData.password = btoa(userData.password)
 
   const response = await fetch(`${_apiUrl}/register`, {
